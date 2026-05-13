@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: MyFirstSpringProject
+  h2:
+    console:
+      enabled: true
+  datasource:
+#    url: jdbc:h2:mem:OCA46Database
+    url: jdbc:h2:file:./data/customer
+    username: ingress
+    password: academy
+  sql:
+    init:
+      mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    jpa:
+      show-sql: true
+#  jackson:
+#    mapper:
+#      accept-case-insensitive-enums: true
+server:
+  port: ${PORT:8181}
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui-oca46/index.html
+#  paths-to-match: /v1/customer/**
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
